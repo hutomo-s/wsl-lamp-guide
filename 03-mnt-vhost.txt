@@ -12,6 +12,12 @@ sudo vim mir.conf
     DocumentRoot /var/www/mir_new/code
 </VirtualHost>
 
+<Directory /home/hutomo/Workspaces/mir_new/code>
+  Require all granted
+</Directory>
+
+
+# command line:
 sudo a2ensite mir
 
 sudo apachectl -t
