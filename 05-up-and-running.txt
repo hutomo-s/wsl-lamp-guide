@@ -1,0 +1,24 @@
+# umount for permission
+sudo umount /mnt/c
+sudo mount -t drvfs C: /mnt/c -o metadata
+
+# composer install
+composer install
+
+# dot env configuration
+prepare .env file
+
+# prepare phinx file
+vendor/bin/phinx init
+
+# check status
+vendor/bin/phinx status -e development
+
+# add new migration
+vendor/bin/phinx create NewMigrationName
+
+# migrate
+vendor/bin/phinx migrate -e development
+
+# rollback
+vendor/bin/phinx rollback -e development
