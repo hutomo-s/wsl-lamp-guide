@@ -16,5 +16,10 @@ sudo a2enmod php5.6
 
 sudo systemctl restart apache2
 
+# composer
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+rm composer-setup.php
+
 # Reference
 # https://gist.github.com/ericfledderman/6c4f0f7e6ffa3477372ebf5392bad6cd
