@@ -1,0 +1,25 @@
+# After running this command, select (Y), option 2, then (Y) for the rest of the prompts.
+sudo service mysql start
+sudo mysql_secure_installation
+
+# First, connect in sudo mysql
+sudo mysql -u root
+
+# Check your accounts present in your db
+SELECT User,Host FROM mysql.user;
+
+# Delete current root@localhost account
+DROP USER 'root'@'localhost';
+
+# Recreate your user
+CREATE USER 'root'@'%' IDENTIFIED BY 'root';
+
+# Give permissions to your user (don't forget to flush privileges)
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+# Exit MySQL and try to reconnect without sudo.
+exit
+
+# Reference
+# https://askubuntu.com/questions/766334/cant-login-as-mysql-user-root-from-normal-user-account-in-ubuntu-16-04

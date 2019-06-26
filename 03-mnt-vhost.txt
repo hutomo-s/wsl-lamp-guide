@@ -1,0 +1,19 @@
+sudo ln -s /mnt/c/Workspaces Workspaces
+
+cd /etc/apache2/sites-enabled
+
+sudo touch mir.conf
+
+sudo vim mir.conf
+
+<VirtualHost *:80>
+    ServerName mir
+    ServerAlias cekaja
+    DocumentRoot /var/www/mir_new/code
+</VirtualHost>
+
+sudo a2ensite mir
+
+sudo apachectl -t
+
+sudo service apache2 reload
