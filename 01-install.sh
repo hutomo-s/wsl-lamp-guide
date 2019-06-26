@@ -9,7 +9,7 @@ sudo apt-get install -y mysql-server
 sudo service mysql start
 sudo mysql_secure_installation
 
-sudo apt install -y php5.6 libapache2-mod-php5.6 php5.6-curl php5.6-gd php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-xmlrpc
+sudo apt install -y php5.6 libapache2-mod-php5.6 php5.6-curl php5.6-gd php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-xmlrpc php5.6-zip
 
 # This will, and should, return a "already enabled" message.
 sudo a2enmod php5.6
