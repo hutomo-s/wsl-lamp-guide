@@ -1,6 +1,20 @@
+# --------
+# s:bashrc
+
 # umount for permission
 sudo umount /mnt/c
 sudo mount -t drvfs C: /mnt/c -o metadata
+
+# run apache and mysql
+sudo service apache2 start
+sudo service mysql start
+
+# e:bashrc
+# --------
+
+
+# -----------------------
+# s:project initial setup
 
 # composer install
 composer install
@@ -10,6 +24,13 @@ prepare .env file
 
 # prepare phinx file
 vendor/bin/phinx init
+
+# e:project initial setup
+# -----------------------
+
+
+# -------
+# s:phinx
 
 # check status
 vendor/bin/phinx status -e development
@@ -22,3 +43,6 @@ vendor/bin/phinx migrate -e development
 
 # rollback
 vendor/bin/phinx rollback -e development
+
+# e:phinx
+# -------
